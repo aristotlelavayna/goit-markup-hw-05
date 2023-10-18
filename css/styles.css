@@ -367,11 +367,11 @@ h2 {
 
 .card-list li img {
     width: 100%;
+    display: block;
 }
 
 .card-list li {
     width: 30%;
-
     display: flex;
     width: 360px;
     height: 420px;
@@ -382,7 +382,32 @@ h2 {
     flex-shrink: 0;
 }
 
-.caption {
+.project-image-caption {
+    position: absolute;
+    background-color: rgba(77, 90, 229, 1);
+    color: var(--CLOUD);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+    transition: cubic-bezier (0.4, 0, 0.2, 1);
+}
+
+.project-image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.project:hover .project-image-caption {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.content {
     border: 1px solid var(--CORNFLOWER, #E7E9FC);
     background: var(--WHITE, #FFF);
     padding: 0px 16px;
